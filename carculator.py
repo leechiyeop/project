@@ -9,7 +9,14 @@ def making_questions() :
 	elif b == 2 : buho = '-'
 	else : buho = '*'
 	
-	ques = str(a)+' '+buho+' '+str(c)+' = '
+	ques = str(a)+' '+buho+' '+str(c)
 	
 	return ques
 
+for a in range(5) :
+	q = making_questions()
+	
+	ans = input(q+' = ')
+
+	if eval(q) == int(ans) : print("Correct!!")
+	else : print("Wrong!!")
