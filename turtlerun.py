@@ -14,10 +14,14 @@ def turnright() :
 def turnleft() :
 	t.setheading(180)
 def play() :
-	t.fd(10)
-	ang = t.towards(t.pos())
+	t.fd(20)
+	ang = devil.towards(t.pos())
 	devil.setheading(ang)
-	devil.fd(9)
+	devil.fd(15)
+	if t.distance(feed)<10 :
+		feed.goto(r.randint(-229,229), r.randint(-229,229))
+	if t.distance(devil)>10 :
+		t.ontimer(play,50)
 
 #악당
 devil.shape('turtle')
@@ -43,6 +47,7 @@ t.onkeypress(turnup,'Up')
 t.onkeypress(turndown, 'Down')
 t.onkeypress(turnleft, 'Left')
 t.onkeypress(turnright, 'Right')
+t.onkeypress(play, 'space')
 t.goto(0,0)
 
 #마무리
