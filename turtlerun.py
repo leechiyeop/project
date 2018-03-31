@@ -1,4 +1,26 @@
 import turtle as t
+import random as r
+devil = t.Turtle()
+feed = t.Turtle()
+
+def turnup() :
+	t.setheading(90)
+def turndown() :
+	t.setheading(270)
+def turnright() :
+	t.setheading(0)
+def turnleft() :
+	t.setheading(180)
+
+devil.shape('turtle')
+devil.up()
+devil.speed(0)
+devil.color('red')
+devil.goto(r.randint(-229, 229), r.randint(-229, 229))
+
+feed.shape('circle')
+feed.up()
+feed.goto(r.randint(-229, 229), r.randint(-229, 229))
 
 t.setup(500,500)
 t.shape('turtle')
@@ -10,15 +32,7 @@ t.onkeypress(turnup,'Up')
 t.onkeypress(turndown, 'Down')
 t.onkeypress(turnleft, 'Left')
 t.onkeypress(turnright, 'Right')
-
-def turnup() :
-	t.setheading(90)
-def turndown() :
-	t.setheading(270)
-def turnright() :
-	t.setheading(0)
-def turnleft() :
-	t.setheading(180)
+t.goto(0,0)
 
 t.listen()
 t.mainloop()
