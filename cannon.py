@@ -2,10 +2,10 @@ import turtle as t
 import random as r
 
 def up() :
-	t.left(1)
+	t.left(2)
 
 def down() :
-	t.right(1)
+	t.right(2)
 
 def launch() :
 	#1. 포물선 생성-땅에 닿을 때까지 돌진 2. 타깃이랑 거북이 거리 차이 확인 3. 태초마을
@@ -20,7 +20,7 @@ def launch() :
 	t.sety(r.randint(10, 100))
 	if dis <= 25 :
 		t.pencolor('blue')
-		t.write('Bingo!!', False, "center", ("",15))
+		t.write('Bingo!!!!!!!!!!!!!', False, "center", ("",15))
 		t.pencolor('black')
 	else :
 		t.pencolor('red')
