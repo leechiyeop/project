@@ -13,6 +13,11 @@ def turnright() :
 	t.setheading(0)
 def turnleft() :
 	t.setheading(180)
+def play() :
+	t.fd(10)
+	ang = t.towards(t.pos())
+	devil.setheading(ang)
+	devil.fd(9)
 
 #악당
 devil.shape('turtle')
@@ -25,6 +30,7 @@ devil.goto(r.randint(-229, 229), r.randint(-229, 229))
 feed.shape('circle')
 feed.up()
 feed.goto(r.randint(-229, 229), r.randint(-229, 229))
+feed.color('yellow')
 
 #주인공
 t.setup(500,500)
