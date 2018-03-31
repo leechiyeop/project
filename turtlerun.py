@@ -6,17 +6,19 @@ t.color('white')
 t.bgcolor('gray')
 t.speed(0)
 t.up()
-t.onkeypress(up,'Up')
-t.onkeypress(down, 'Down')
-t.onkeypress(left, 'Left')
-t.onkeypress(right, 'Right')
+t.onkeypress(turnup,'Up')
+t.onkeypress(turndown, 'Down')
+t.onkeypress(turnleft, 'Left')
+t.onkeypress(turnright, 'Right')
 
-def up() :
-	
-def down() :
-	
-def right() :
-	
-def left() :
-	
+def turnup() :
+	t.setheading(90)
+def turndown() :
+	t.setheading(270)
+def turnright() :
+	t.setheading(0)
+def turnleft() :
+	t.setheading(180)
+
+t.listen()
 t.mainloop()
