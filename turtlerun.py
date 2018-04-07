@@ -7,7 +7,7 @@ feed = t.Turtle()
 
 t.title('Turtle Run')
 
-scare = 0
+score = 0
 playing = False
 
 #함수생성
@@ -22,17 +22,27 @@ def turnleft() :
 def start() :
 	global playing
 	if playing == False : playing = True
+	t.clear()
 	play()
 def play() :
-	t.clear()
+	global playing
+	global score
 	t.fd(20)
 	ang = devil.towards(t.pos())
 	devil.setheading(ang)
-	devil.fd(15)
+	devil.fd(10)
+	
 	if t.distance(feed)<10 :
 		feed.goto(r.randint(-229,229), r.randint(-229,229))
+		score+=50
+		t.write(score)
+		
 	if t.distance(devil)>10 :
-		t.ontimer(play,100)
+		t.ontimer(play,50)
+	
+	else :
+		message('GAME OVER', 'SCORE IS '+str(score))
+		t.goto(0,0)
 def message(m1, m2) :
 	t.up()
 	t.goto(0,100)
