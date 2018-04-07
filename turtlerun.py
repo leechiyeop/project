@@ -7,6 +7,9 @@ feed = t.Turtle()
 
 t.title('Turtle Run')
 
+scare = 0
+playing = False
+
 #함수생성
 def turnup() :
 	t.setheading(90)
@@ -16,7 +19,12 @@ def turnright() :
 	t.setheading(0)
 def turnleft() :
 	t.setheading(180)
+def start() :
+	global playing
+	if playing == False : playing = True
+	play()
 def play() :
+	t.clear()
 	t.fd(20)
 	ang = devil.towards(t.pos())
 	devil.setheading(ang)
@@ -57,7 +65,7 @@ t.onkeypress(turnup,'Up')
 t.onkeypress(turndown, 'Down')
 t.onkeypress(turnleft, 'Left')
 t.onkeypress(turnright, 'Right')
-t.onkeypress(play, 'space')
+t.onkeypress(start, 'space')
 t.goto(0,0)
 
 #마무리
