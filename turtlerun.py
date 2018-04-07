@@ -5,6 +5,8 @@ devil = t.Turtle()
 
 feed = t.Turtle()
 
+t.title('Turtle Run')
+
 #함수생성
 def turnup() :
 	t.setheading(90)
@@ -23,6 +25,13 @@ def play() :
 		feed.goto(r.randint(-229,229), r.randint(-229,229))
 	if t.distance(devil)>10 :
 		t.ontimer(play,100)
+def message(m1, m2) :
+	t.up()
+	t.goto(0,100)
+	t.write(m1, False, 'center', ('', 20))
+	t.goto(0,-100)
+	t.write(m2, False, 'center', ('',9))
+message('START GAME', 'press space to start')
 
 #악당
 devil.shape('turtle')
