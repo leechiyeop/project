@@ -21,9 +21,11 @@ def turnleft() :
 	t.setheading(180)
 def start() :
 	global playing
-	if playing == False : playing = True
-	t.clear()
-	play()
+	if playing == False : 
+		playing = True
+		t.clear()
+		play()
+		
 def play() :
 	global playing
 	global score
@@ -31,8 +33,8 @@ def play() :
 	ang = devil.towards(t.pos())
 	devil.setheading(ang)
 	sd=9
-	if score%100==0 :
-		sd += (score/100)+1
+	if score%50==0 :
+		sd += (score/50)+1
 	if sd> 19: sd = 19	
 	devil.fd(sd)
 		
@@ -44,10 +46,11 @@ def play() :
 	if t.distance(devil)>10 :
 		t.ontimer(play,50)
 	
-	else :
+	if t.distance(devil)<10 :
 		message('GAME OVER', 'SCORE IS '+str(score))
 		t.goto(0,0)
 		score = 0
+		playing= False
 def message(m1, m2) :
 	t.up()
 	t.goto(0,100)
