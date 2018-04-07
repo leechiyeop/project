@@ -30,9 +30,13 @@ def play() :
 	t.fd(20)
 	ang = devil.towards(t.pos())
 	devil.setheading(ang)
-	devil.fd(10)
-	
-	if t.distance(feed)<10 :
+	sd=9
+	if score%100==0 :
+		sd += (score/100)+1
+	if sd> 19: sd = 19	
+	devil.fd(sd)
+		
+	if t.distance(feed)<15 :
 		feed.goto(r.randint(-229,229), r.randint(-229,229))
 		score+=50
 		t.write(score)
@@ -43,6 +47,7 @@ def play() :
 	else :
 		message('GAME OVER', 'SCORE IS '+str(score))
 		t.goto(0,0)
+		score = 0
 def message(m1, m2) :
 	t.up()
 	t.goto(0,100)
