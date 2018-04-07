@@ -2,6 +2,7 @@
 import turtle as t
 import random as r
 devil = t.Turtle()
+
 feed = t.Turtle()
 
 #함수생성
@@ -21,7 +22,7 @@ def play() :
 	if t.distance(feed)<10 :
 		feed.goto(r.randint(-229,229), r.randint(-229,229))
 	if t.distance(devil)>10 :
-		t.ontimer(play,50)
+		t.ontimer(play,100)
 
 #악당
 devil.shape('turtle')
